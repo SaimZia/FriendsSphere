@@ -10,30 +10,36 @@
         <style>
             div.main{
                 background-color: rgb(221, 250, 254); 
-                width: 380px; 
+                width: 100%; 
                 height: 100%;
-                margin-left: 35%;
                 top: 0;
             }
             div.header{
                 background-color: rgb(0, 32, 73);
+                color: white;
+                font-size: 40px;
                 height: 90px;
-                width: 380px;
+                width: 100%;
                 top: 0px;
                 text-align: left;
                 position: fixed;
+                display: flex;
+                align-items: center;
             }
             div.footer{
                 background-color: rgb(0, 32, 73);
                 height: 90px;
-                width: 380px;
+                width: 100%;
                 position: fixed;
                 bottom: 0px;
+                text-align: center;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
             }
-            div.pic{
-                background-image: url("data:image/jpeg;base64,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");
-                width: 380;
-                height: 580;
+            div.middle{
+                margin-top: 100px;
+                margin-bottom: 100px;
             }
             div.cards{
                 color: black;
@@ -52,53 +58,70 @@
                 margin-top: 40px;
                 margin-bottom: 40px;
             }
+            div.tags{
+                background-color: rgb(207, 159, 255);
+                width: fit-content;
+                height: fit-content;
+                padding-right: 5px;
+                padding-left: 5px;
+                border-radius: 10px;
+            }
         </style>
     </head>
-    <body style="background-color: rgb(80, 80, 80);">
+    <body style="background-color: rgb(221, 250, 254); margin: 0;">
         <div class="BackGroung">
             <div class="main">
                 <div class="header">
-                    <br>
-                    <table>
-                        <tr>
-                            <th style="padding-left: 10px;"><i class="material-icons" style="font-size:48px; color: white;">menu</i></th>
-                            <th style="padding-left: 10px; color: white; font-size: 28px;">My</th>
-                            <th style="padding-left: 10px; color: white; font-size: 28px;">Profile</th>
-                            <th style="padding-left: 115px;"><i class="material-icons" style="font-size:48px; color: white;">more_vert</i></th>
+                            <i class="material-icons" style="font-size:48px; color: white;">menu</i>
+                            <div style="flex-grow: 1;">My Profile</div>
+                            <i class="material-icons" style="font-size:48px; color: white;">more_vert</i>
                         </tr>
                     </table>
                     
                 </div>
-
-                <div class="cards"><p>Name: Saim The Great</p></div>
-                <div class="cards"><p>Birthday: 20/6/2003</p></div>
-                <div class="cards"><p>Country: Andorra</p></div>
-                <div class="cards"><p>Occupation: Free Lancer</p></div>
-                <div class="cards"><p>Email: ImNotWell@gmail.com</p></div>
-                <div class="cards"><p>Personality: NFJ</p></div>
-                <div class="cards"><p>Name: Saim The Great</p></div>
-                <div class="cards"><p>Birthday: 20/6/2003</p></div>
-                <div class="cards"><p>Country: Andorra</p></div>
-                <div class="cards"><p>Occupation: Free Lancer</p></div>
-                <div class="cards"><p>Email: ImNotWell@gmail.com</p></div>
-                <div class="cards"><p>Personality: NFJ</p></div><div class="cards"><p>Name: Saim The Great</p></div>
-                <div class="cards"><p>Birthday: 20/6/2003</p></div>
-                <div class="cards"><p>Country: Andorra</p></div>
-                <div class="cards"><p>Occupation: Free Lancer</p></div>
-                <div class="cards"><p>Email: ImNotWell@gmail.com</p></div>
-                <div class="cards"><p>Personality: NFJ</p></div>
-                <dic class="tags"><h3>volleyball</h3></dic>
+                <div class="middle">
+                    <div class="cards"><p><b>Name:</b><span id="resultName"></span></p></div>
+                    <div class="cards"><p><b>Birthday: </b><span id="resultBirthday"></span></p></div>
+                    <div class="cards"><p><b>Country: </b><span id="resultCountry"></span></p></div>
+                    <div class="cards"><p><b>Occupation: </b><span id="resultOccupation"></span></p></div>
+                    <div class="cards"><p><b>Email: </b><span id="resultEmail"></span></p></div>
+                    <div class="cards"><p><b>Personality: </b><span id="resultPersonality"></span></p></div>
+                    
+                    <div class="cards">
+                        <p><b>Tags: </b></p>
+                        <div class="tags"><h3>Chess</h3></div>
+                        <div class="tags"><h3>volleyball</h3></div>
+                    </div>
+                </div>
+                
                 <div class="footer">
-                    <br>
-                    <table>
-                        <tr>
-                            <th style="padding-left: 55px;"><i class="material-icons" style="font-size:48px; color: white;">sms</i></th>
-                            <th style="padding-left: 55px;"><i class="material-icons" style="font-size:48px; color: white;">content_copy</i></th>
-                            <th style="padding-left: 55px;"><i class="material-icons" style="font-size:48px; color: white; ">settings</i></th>
-                        </tr>
-                    </table>
+                    <i class="material-icons" style="font-size:48px; color: white;">sms</i>
+                    <i class="material-icons" style="font-size:48px; color: white;">content_copy</i>
+                    <i class="material-icons" style="font-size:48px; color: white; ">settings</i>
+                    
                 </div>
             </div>
         </div>
+        <script>
+            window.addEventListener('load', () => {
+                const name = localStorage.getItem('NAME');
+                const birthday = localStorage.getItem('BIRTHDAY');
+                const country = localStorage.getItem('COUNTRY');
+                const occupation = localStorage.getItem('OCCUPATION');
+                const email = localStorage.getItem('EMAIL');
+                const personality = localStorage.getItem('PERSONALITY');
+                
+                document.getElementById('resultName').innerHTML = name
+                document.getElementById('resultBirthday').innerHTML = birthday;
+                document.getElementById('resultCountry').innerHTML = country;
+                document.getElementById('resultOccupation').innerHTML = occupation;
+                document.getElementById('resultEmail').innerHTML = email;
+                document.getElementById('resultPersonality').innerHTML = personality;
+                
+            })
+
+            // const data = JSON.parse(localStorage.getItem("userInfo"));
+            // console.log(data);
+        </script>
     </body>
 </html>
