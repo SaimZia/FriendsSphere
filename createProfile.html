@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="Swip" href="swip.css" type="text/css">
+        <title>Create Profile</title>
+        <style>
+            div.main{
+                background-color: rgb(221, 250, 254); 
+                width: 100%; 
+                height: 100%;
+                top: 0;
+            }
+            div.header{
+                background-color: rgb(221, 250, 254);
+                height: 90px;
+                width: 100%;
+                top: 0px;
+                text-align: left;
+                position: fixed;
+            }
+            div.footer{
+                background-color: rgb(221, 250, 254);
+                height: 90px;
+                width: 100%;
+                position: fixed;
+                bottom: 0px;
+                text-align: center;
+            }
+            div.middle{
+                margin-top: 100px;
+                margin-bottom: 100px;
+            }
+            div.cards{
+                color: black;
+                background-color: white;
+
+                padding-top: 10px;
+                padding-left: 25px;
+                padding-bottom: 10px;
+
+                border-radius: 30px;
+                text-align: left;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                
+                margin-left: 40px;
+                margin-right: 40px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+            div.tags{
+                background-color: rgb(207, 159, 255);
+                width: fit-content;
+                padding-right: 5px;
+                padding-left: 5px;
+                border-radius: 10px;
+            }
+            .nextPageButton{
+                background-color: rgb(0, 32, 73);
+                color: white;
+                font-size: 20px;
+
+                margin-top: 10px;
+                border-radius: 40px;
+
+                padding-top: 20px;
+                padding-left: 80px;
+                padding-right: 80px;
+                padding-bottom: 20px;
+            }
+            a:link{
+                text-decoration: none;
+                color: white;
+            }
+            a:visited{
+                color: white;
+            }
+            .intake{
+                border: none;
+                text-transform: unset;
+            }
+            input{
+                border-top-style: hidden;
+                border-left-style: hidden;
+                border-right-style: hidden;
+                border-bottom-style: hidden;
+            }
+            .intake:focus{
+                outline: none;
+            }
+            div.tagbox{
+                background-color: rgb(207, 159, 255);
+                width: fit-content;
+                padding-right: 5px;
+                padding-left: 5px;
+                border-radius: 10px;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body style="background-color: rgb(221, 250, 254); margin: 0;">
+        <div class="BackGroung">
+            <div class="main">
+                <div class="header">
+                    <br>
+                    <table>
+                        <tr>
+                            <th style="padding-left: 10px;"><i class="material-icons" style="font-size:48px; color: rgb(0, 32, 73);">arrow_back</i></th>
+                            <th style="padding-left: 10px; color: rgb(0, 32, 73); font-size: 28px;">Fill</th>
+                            <th style="padding-left: 10px; color: rgb(0, 32, 73); font-size: 28px;">Your</th>
+                            <th style="padding-left: 10px; color: rgb(0, 32, 73); font-size: 28px;">Profile</th>
+                        </tr>
+                    </table>
+                    
+                </div>
+                
+                    <form action="myProfile.html" method="get" id="userInformation">
+                        <div class="middle">
+                            <div class="cards"><p><label for="username"><b>Name: </b></label> <input class="intake" type="text" id="username" placeholder="Enter Name"></p></div>
+                            <div class="cards"><p><label for="birthday"><b>Birthday: </b></label> <input class="intake" type="date" id="birthday" placeholder="Enter Date of Birth"></p></div>
+                            <div class="cards"><p><label for="country"><b>Country: </b></label> <input class="intake" type="test" id="country" placeholder="Enter Country"></p></div>
+                            <div class="cards"><p><label for="occupation"><b>Occupation: </b></label> <input class="intake" type="text" id="occupation" placeholder="Enter Occupation"></p></div>
+                            <div class="cards"><p><label for="email"><b>Email: </b></label> <input class="intake" type="email" id="email" placeholder="Enter Email"></p></div>
+                            <div class="cards"><p><label for="personality"><b>Personality: </b></label> <input class="intake" type="text" id="personality" placeholder="Enter Personality"></p></div>
+                        </div>
+
+                        <div class="footer">
+                            <button class="nextPageButton" type="submit" onclick="handleSubmit()"><a href="./myProfile.html">Continue</a></button>
+                        </div>
+                    </form>
+                        
+                    
+                    <!-- <div class="cards">
+                        <p><b>Tags: </b>
+                            <div class="tagbox">
+                                <input class="tag" type="checkbox" id="tag">
+                                <label for="tag"><b>volleyball</b></label> 
+                            </div>
+                            <div class="tagbox">
+                                <input class="tag" type="checkbox" id="tag">
+                                <label for="tag"><b>volleyball</b></label> 
+                            </div>
+                        </p>
+                    </div> 
+                    <div class="cards">
+                        <p><b>Tags: </b></p>
+                        <div class="tags"><h3>Chess</h3></div>
+                        <div class="tags"><h3>volleyball</h3></div>
+                    </div> -->
+                
+                
+                
+            </div>
+        </div>
+        <script>
+            function handleSubmit(e){
+                e.preventDefault()
+                const name = document.getElementById('name');
+                const birthday = document.getElementById('birthday');
+                const country = document.getElementById('country');
+                const occupation = document.getElementById('occupation');
+                const email = document.getElementById('email');
+                const personality = document.getElementById('personality');
+                
+                localStorage.setItem("NAME",name.value);
+                localStorage.setItem("BIRTHDAY",birthday.value);
+                localStorage.setItem("COUNTRY",country.value);
+                localStorage.setItem("OCCUPATION",occupation.value);
+                localStorage.setItem("EMAIL",email.value);
+                localStorage.setItem("PERSONALITY",personality.value);
+                console.log(localStorage.getItem('NAME'));
+                return;
+            }
+
+            // const form = document.querySelector("#userInformation");
+            // form.addEventListener('click',e => {
+            //     const username = document.querySelector("username");
+            //     const birthday = document.querySelector("birthday");
+            //     const country = document.querySelector("country");
+            //     const occupation = document.querySelector("occupation");
+            //     const email = document.querySelector("email");
+            //     const personality = document.querySelector("personality");
+            //     const userInfo = {
+            //         username:  username.value,
+            //         birthday: birthday.value,
+            //         country: country.value,
+            //         occupation: occupation.value,
+            //         email: email.value,
+            //         personality: personality.value
+            //     }
+            //     localStorage.setItem("userInfo",JSON.stringify(userInfo));
+            // })
+
+        </script>
+    </body>
+</html>
