@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="Swip" href="swip.css" type="text/css">
+    <title>Login Page</title>
+    <style>
+        div.main {
+            background-color: rgb(221, 250, 254);
+            width: 100%;
+            height: auto;
+            top: 0;
+            text-align: center;
+        }
+
+        div.cards {
+            color: black;
+            background-color: white;
+
+            padding-top: 10px;
+            padding-left: 25px;
+            padding-bottom: 10px;
+
+            border-radius: 30px;
+            text-align: left;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        div.Buttons {
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nextPageButton {
+            background-color: rgb(0, 32, 73);
+            color: white;
+            font-size: 20px;
+
+            margin-top: 10px;
+            border-radius: 40px;
+
+            padding-top: 20px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-bottom: 20px;
+        }
+
+        a:link {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:visited {
+            color: white;
+        }
+
+        .intake {
+            border: none;
+            text-transform: unset;
+        }
+
+        input {
+            border-top-style: hidden;
+            border-left-style: hidden;
+            border-right-style: hidden;
+            border-bottom-style: hidden;
+        }
+
+        .intake:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(221, 250, 254); margin: 0;">
+    <div class="BackGroung">
+        <div class="main">
+            <img src="logo1.jpg" style="margin-top: 25%;margin-bottom: 0;width: 80%;">
+            <form id="loginForm">
+                <div class="cards">
+                    <p><input class="intake" type="email" id="email" placeholder="Email Address"></p>
+                </div>
+
+                <div class="cards">
+                    <p><input class="intake" type="password" id="password" placeholder="Password"></p>
+                </div>
+
+                <div class="Buttons">
+                    <button class="nextPageButton" id="loginButton" type="submit">Login</button>
+                    <button class="nextPageButton" type="submit"><a href="./signup.html">Sign Up</a></button>
+                </div>
+                <br><br><br>
+                <a href="./forgotPassword.html" style="color: gray; text-decoration: underline;">Forgot Password</a>
+            </form>
+            <script>
+                // Get the login form element
+                var loginForm = document.getElementById("loginForm");
+
+                // Add a submit event listener to the login form
+                loginForm.addEventListener("submit", function (event) 
+                {
+                    event.preventDefault(); // Prevent form submission
+
+                    // Get the values of the email and password input fields
+                    var email = document.getElementById("email").value;
+                    var password = document.getElementById("password").value;
+
+                    if (!email || !password) 
+                    {
+                        // If any input field is empty, alert the user.
+                        alert("Please fill out all input fields.");
+                        return;
+                    }
+
+                    if (!validateEmail(email)) 
+                    {
+                        alert("Please enter a valid email address.");
+                        return;
+                    }
+
+                    /// Retrieve user data from local storage
+                    var userData = JSON.parse(localStorage.getItem(email));
+
+                    if (!userData) 
+                    {
+                        // Display an error message if user data is not found in local storage
+                        alert("Invalid email or password");
+                        return;
+                    }
+
+                    if (userData.email == email && userData.password == password) {
+                        // Store the email in session storage
+                        sessionStorage.setItem("email", email);
+                        // Redirect to the user's profile page
+                        window.location.href = "./myprofile.html";
+                    } 
+                    else if (user.userData.email != email || userData.password != password)
+                    {
+                        // Display an error message if email or password is incorrect
+                        alert("Invalid email or password");
+                        return;
+                    }
+                });
+
+                function validateEmail(email) 
+                {
+                        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        return re.test(email);
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
