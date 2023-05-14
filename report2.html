@@ -100,12 +100,30 @@
                           </div>
                         </div>
                         <div class="footer">
-                          <button class="nextPageButton" type="submit">Submit</button>
+                          <button class="nextPageButton" id="Name" type="submit">Submit</button>
                         </div>
                       </form>
             </div>
         </div>
         <script>
+            var Yahya=document.getElementById("Name");
+            Yahya.addEventListener("click",function(Event){ 
+            Event.preventDefault();
+            var hell=document.getElementById("report").value;
+            if(!hell)
+            {
+                alert("Please Fill out the Report Field");
+                window.location.href="./report2.html";
+                return;
+            }  
+            else
+            {
+            alert("Your Report has been submitted");
+                window.location.href="./friendlList.html";
+                return;
+            }
+            });
+    
         </script>
     </body>
 </html>
