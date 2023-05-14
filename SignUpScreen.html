@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="Swip" href="swip.css" type="text/css">
+    <title>Sign Up</title>
+    <style>
+        div.main {
+            background-color: rgb(221, 250, 254);
+            width: 100%;
+            height: auto;
+            top: 0;
+            text-align: center;
+        }
+
+        div.cards {
+            color: black;
+            background-color: white;
+
+            padding-top: 10px;
+            padding-left: 25px;
+            padding-bottom: 10px;
+
+            border-radius: 30px;
+            text-align: left;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        div.Buttons {
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nextPageButton {
+            background-color: rgb(0, 32, 73);
+            color: white;
+            font-size: 20px;
+
+            margin-top: 10px;
+            border-radius: 40px;
+
+            padding-top: 20px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-bottom: 20px;
+        }
+
+        a:link {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:visited {
+            color: white;
+        }
+
+        .intake {
+            border: none;
+            text-transform: unset;
+        }
+
+        input {
+            border-top-style: hidden;
+            border-left-style: hidden;
+            border-right-style: hidden;
+            border-bottom-style: hidden;
+        }
+
+        .intake:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(221, 250, 254); margin: 0;">
+    <div class="BackGroung">
+        <div class="main">
+            <img src="logo1.jpg" style="margin-top: 10%;margin-bottom: 0;width: 80%;">
+            <form>
+                <div class="cards">
+                    <p><input class="intake" type="text" id="username" placeholder="Username"></p>
+                </div>
+
+                <div class="cards">
+                    <p><input class="intake" type="email" id="email" placeholder="Email"></p>
+                </div>
+
+                <div class="cards">
+                    <p><input class="intake" type="password" id="password" placeholder="Password">
+                </div>
+
+                <div class="Buttons">
+                    <button class="nextPageButton" id="signUpButton" type="submit">Sign Up</button>
+                </div>
+                <br><br>
+                <a href="./login.html" style="color: gray; text-decoration: underline;">Login</a>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Get the sign-up button element.
+        var signupButton = document.getElementById("signUpButton");
+
+        // Add a click event listener to the sign-up button
+        signupButton.addEventListener("click", function (event) 
+        {
+            // Prevent the default form submission.
+            event.preventDefault();
+
+            // Get the values of the email and password input fields nad store them in variables.
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if (!username || !email || !password) {
+                // If any input field is empty, alert the user.
+                alert("Please fill out all input fields.");
+                return;
+            }
+
+            if (!validateEmail(email)) 
+            {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+             // Password validation
+            var upperCase = /[A-Z]/;
+            var lowerCase = /[a-z]/;
+            var specialChar = /[\W]/;
+            var numericChar = /[0-9]/;
+            if (!upperCase.test(password) ||
+                !lowerCase.test(password) ||
+                !specialChar.test(password) ||
+                !numericChar.test(password) ||
+                password.length < 8) 
+                {
+                    // If password is not up to criteria, alert the user.
+                    alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one special character, and one numeric digit.");
+                    return;
+                }
+
+            // Check if the email address is already in use.
+            if (localStorage.getItem(email)) 
+            {
+                alert("Email address is already in use. Please choose another one.");
+                indow.location.href = "./signup.html";
+                return;
+            }
+
+            // Store the email and password in local storage as a JSON string.
+            var user = { email: email, password: password};
+            localStorage.setItem(email, JSON.stringify(user));
+
+            // Redirect to the login page.
+            window.location.href = "./createProfile.html";
+        });
+
+        // Get the show password checkbox element
+        //var showPasswordCheckbox = document.getElementById("showPasswordCheckbox");
+
+        // Add a change event listener to the checkbox
+       // showPasswordCheckbox.addEventListener("change", function () 
+        //{
+            // Get the password input element
+            //var passwordInput = document.getElementById("password");
+            // Toggle the password input field's type between "password" and "text" based on whether the checkbox is checked or not.
+           // passwordInput.type = this.checked ? "text" : "password";
+       // });
+
+        function validateEmail(email) 
+        {
+            var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>
