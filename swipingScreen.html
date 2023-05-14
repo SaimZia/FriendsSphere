@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Swiping Screen</title>
+        <!-- Import Swiper CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <!-- Add custom CSS for your swiping screen -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <link rel="Swip" href="swip.css" type="text/css">
+        <title>Swiping Screen</title>
+        <style>
+            div.main{
+                background-color: rgb(221, 250, 254);
+                width: 100%; 
+                height: 100%;
+                top: 0;
+            }
+            div.header{
+                background-color: rgb(0, 32, 73);
+                color: white;
+                font-size: 40px;
+                height: 90px;
+                width: 100%;
+                top: 0px;
+                text-align: left;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2;
+            }
+            div.footer{
+                background-color: rgb(0, 32, 73);
+                height: 90px;
+                width: 100%;
+                position: fixed;
+                bottom: 0px;
+                text-align: center;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                z-index: 2;
+            }
+            div.middle{
+                margin-top: 100px; 
+                margin-bottom: 100px;
+                width: 100%;
+                height: 100%;
+            }
+            
+
+            .pic{
+                width: 100%;
+                height: 10px;
+                /* object-fit: fill; */
+            }
+            img{
+                width: 100%;
+                height: 560px;
+            }
+            .swiper-pagination{
+                margin-bottom: 100px;
+                position: fixed;
+            }
+       /* div.image-container {
+            display: flex;
+            flex-direction: row;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+        } 
+
+         img.pic {
+            width: 100%;
+            height: auto;
+            object-fit: fill;
+            align-items: center;
+            margin-right: 20px;
+        } */
+
+
+            
+        </style>
+    </head>
+    <body style= "margin: 0; background-color: rgb(221, 250, 254);">
+
+        <div class="BackGroung">
+            <div class="main">
+                <div class="header">
+                            <i class="material-icons" style="font-size:48px; color: white;">menu</i>
+                            <div style="flex-grow: 1;">My Profile</div>
+                            <i class="material-icons" style="font-size:48px; color: white;">more_vert</i>
+                        </tr>
+                    </table>
+                    
+                </div>
+
+                <div class="middle">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://media.istockphoto.com/id/1359149467/photo/shot-of-a-handsome-young-man-standing-alone-and-stretching-during-his-outdoor-workout.jpg?b=1&s=170667a&w=0&k=20&c=kOKXegU6T1wgQx-KMfNU8yZoO7-MUz7ZO7NHgj7279s="></div>
+
+                            <div class="swiper-slide "><img src="https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGFuZHNvbWUlMjBndXl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"></div>
+                            <div class="swiper-slide "><img src="https://images.unsplash.com/photo-1601288496920-b6154fe3626a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHByZXR0eSUyMGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"></div>
+                            <div class="swiper-slide "><img src="https://images.unsplash.com/photo-1611608822650-925c227ef4d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aGFuZHNvbWUlMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"></div>
+                            <div class="swiper-slide "><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=200&q=60"></div>
+                            <div class="swiper-slide "><img src="https://images.unsplash.com/photo-1604004215236-0d9c37cf4376?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHJldHR5JTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"></div>
+                            <div class="swiper-slide "><img src="https://images.unsplash.com/photo-1583883773608-6b2bcee72242?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGhhbmRzb21lJTIwbWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"></div>
+                            <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1611485988300-b7530defb8e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhhbmRzb21lJTIwZ3V5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"></div>
+                            <div class="swiper-slide"><img src="https://plus.unsplash.com/premium_photo-1668485968650-be7c63050e59?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJldHR5JTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"></div>
+                        
+                        </div>
+                    
+                        <!-- Add pagination bullets -->
+                        <div class="swiper-pagination"></div>
+                    
+                        <!-- Add navigation arrows -->
+                        <div class="swiper-button-prev">
+                            <i class="material-icons">keyboard_arrow_left</i>
+                        </div>
+                        <div class="swiper-button-next">
+                            <i class="material-icons">keyboard_arrow_right</i>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="footer">
+                    <a href="friendList.html" class="icon-btn">
+                        <i class="material-icons" style="font-size: 48px; color: white;">mail</i>
+                      </a>
+                      <a href="swipingScreen.html" class="icon_btn">
+                        <i class="material-icons" style="font-size:48px; color: white;">home</i>
+                      </a>
+                      <a href="myProfile.html"class="icon_btn">
+                        <i class="material-icons" style="font-size:48px; color: white; ">person</i>
+                      </a>     
+              </div>
+            </div>
+        </div>
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true,
+
+                // If you want pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
+        </script>
+    </body>
+</html>
