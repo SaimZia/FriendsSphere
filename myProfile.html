@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="Swip" href="swip.css" type="text/css">
-        <title>Swiping Screen</title>
+        <title>My Profile</title>
         <style>
             div.main{
                 background-color: rgb(221, 250, 254); 
@@ -74,13 +74,13 @@
                 <div class="header">
                             <i class="material-icons" style="font-size:48px; color: white;">menu</i>
                             <div style="flex-grow: 1;">My Profile</div>
-                            <i class="material-icons" style="font-size:48px; color: white;">more_vert</i>
+                            
                         </tr>
                     </table>
                     
                 </div>
                 <div class="middle">
-                    <div class="cards"><p><b>Name:</b><span id="resultName"></span></p></div>
+                    <div class="cards"><p><b>Name: </b><span id="resultName"></span></p></div>
                     <div class="cards"><p><b>Birthday: </b><span id="resultBirthday"></span></p></div>
                     <div class="cards"><p><b>Country: </b><span id="resultCountry"></span></p></div>
                     <div class="cards"><p><b>Occupation: </b><span id="resultOccupation"></span></p></div>
@@ -103,25 +103,14 @@
             </div>
         </div>
         <script>
-            window.addEventListener('load', () => {
-                const name = localStorage.getItem('NAME');
-                const birthday = localStorage.getItem('BIRTHDAY');
-                const country = localStorage.getItem('COUNTRY');
-                const occupation = localStorage.getItem('OCCUPATION');
-                const email = localStorage.getItem('EMAIL');
-                const personality = localStorage.getItem('PERSONALITY');
-                
-                document.getElementById('resultName').innerHTML = name
-                document.getElementById('resultBirthday').innerHTML = birthday;
-                document.getElementById('resultCountry').innerHTML = country;
-                document.getElementById('resultOccupation').innerHTML = occupation;
-                document.getElementById('resultEmail').innerHTML = email;
-                document.getElementById('resultPersonality').innerHTML = personality;
-                
-            })
 
-            // const data = JSON.parse(localStorage.getItem("userInfo"));
-            // console.log(data);
+            document.getElementById("resultName").innerHTML=localStorage.getItem("textvalue1");
+            document.getElementById("resultBirthday").innerHTML=localStorage.getItem("textvalue2");
+            document.getElementById("resultCountry").innerHTML=localStorage.getItem("textvalue3");
+            document.getElementById("resultOccupation").innerHTML=localStorage.getItem("textvalue4");
+            document.getElementById("resultEmail").innerHTML=localStorage.getItem("textvalue5");
+            document.getElementById("resultPersonality").innerHTML=localStorage.getItem("textvalue6");
+
         </script>
     </body>
 </html>
