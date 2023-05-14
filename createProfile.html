@@ -108,7 +108,7 @@
                     <br>
                     <table>
                         <tr>
-                            <th style="padding-left: 10px;"><i class="material-icons" style="font-size:48px; color: rgb(0, 32, 73);">arrow_back</i></th>
+                            <th style="padding-left: 10px;"><button style="background: none; border: none;"><a href="signup.html"><i class="material-icons" style="font-size:48px; color: rgb(0, 32, 73);">arrow_back</i></a></button></th>
                             <th style="padding-left: 10px; color: rgb(0, 32, 73); font-size: 28px;">Fill</th>
                             <th style="padding-left: 10px; color: rgb(0, 32, 73); font-size: 28px;">Your</th>
                             <th style="padding-left: 10px; color: rgb(0, 32, 73); font-size: 28px;">Profile</th>
@@ -119,81 +119,102 @@
                 
                     <form action="myProfile.html" method="get" id="userInformation">
                         <div class="middle">
-                            <div class="cards"><p><label for="username"><b>Name: </b></label> <input class="intake" type="text" id="username" placeholder="Enter Name"></p></div>
+
+                            <div class="cards"><p><label for="username"><b>Name: </b></label> <input class="intake" type="text" id="username" pattern="{3}" placeholder="Enter Name"></p></div>
+
                             <div class="cards"><p><label for="birthday"><b>Birthday: </b></label> <input class="intake" type="date" id="birthday" placeholder="Enter Date of Birth"></p></div>
+
                             <div class="cards"><p><label for="country"><b>Country: </b></label> <input class="intake" type="test" id="country" placeholder="Enter Country"></p></div>
+
                             <div class="cards"><p><label for="occupation"><b>Occupation: </b></label> <input class="intake" type="text" id="occupation" placeholder="Enter Occupation"></p></div>
+
                             <div class="cards"><p><label for="email"><b>Email: </b></label> <input class="intake" type="email" id="email" placeholder="Enter Email"></p></div>
+
                             <div class="cards"><p><label for="personality"><b>Personality: </b></label> <input class="intake" type="text" id="personality" placeholder="Enter Personality"></p></div>
+
                         </div>
 
                         <div class="footer">
-                            <button class="nextPageButton" type="submit" onclick="handleSubmit()"><a href="./myProfile.html">Continue</a></button>
+                            <button type="submit" class="nextPageButton" id="continue" onclick="passvalues()"><a href="./createProfile1.html">Continue</a></button>
                         </div>
                     </form>
-                        
-                    
-                    <!-- <div class="cards">
-                        <p><b>Tags: </b>
-                            <div class="tagbox">
-                                <input class="tag" type="checkbox" id="tag">
-                                <label for="tag"><b>volleyball</b></label> 
-                            </div>
-                            <div class="tagbox">
-                                <input class="tag" type="checkbox" id="tag">
-                                <label for="tag"><b>volleyball</b></label> 
-                            </div>
-                        </p>
-                    </div> 
-                    <div class="cards">
-                        <p><b>Tags: </b></p>
-                        <div class="tags"><h3>Chess</h3></div>
-                        <div class="tags"><h3>volleyball</h3></div>
-                    </div> -->
-                
-                
-                
             </div>
         </div>
         <script>
-            function handleSubmit(e){
-                e.preventDefault()
-                const name = document.getElementById('name');
-                const birthday = document.getElementById('birthday');
-                const country = document.getElementById('country');
-                const occupation = document.getElementById('occupation');
-                const email = document.getElementById('email');
-                const personality = document.getElementById('personality');
+
+
+
+        
+                // Get the continue button element.
+                var continueButton = document.getElementById("continue");
+        
+                // Add a click event listener to the continue button
+                continueButton.addEventListener("click", function (event) 
+                {
+                    // Prevent the default form submission.
+                    event.preventDefault();
+        
+                    // Get the values of the email and password input fields nad store them in variables.
+                    var username = document.getElementById("username").value;
+                    var birthday = document.getElementById("birthday").value;
+                    var country = document.getElementById("country").value;
+                    var occupation = document.getElementById("occupation").value;
+                    var email = document.getElementById("email").value;
+                    var personality = document.getElementById("personality").value;
+        
+                    if (!validateEmail(email)) 
+                    {
+                        alert("Please enter a valid email address.");
+                        return;
+                        window.location.href = "./createProfile.html";
+                    }
+                    function validateEmail(email) 
+                {
+                    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return re.test(email);
+                    
+
+                }
+               
                 
-                localStorage.setItem("NAME",name.value);
-                localStorage.setItem("BIRTHDAY",birthday.value);
-                localStorage.setItem("COUNTRY",country.value);
-                localStorage.setItem("OCCUPATION",occupation.value);
-                localStorage.setItem("EMAIL",email.value);
-                localStorage.setItem("PERSONALITY",personality.value);
-                console.log(localStorage.getItem('NAME'));
-                return;
-            }
+                if (!username || !email || !birthday || !country || !occupation || !Personality) {
+                    // If any input field is empty, alert the user.
+                    alert("Please fill out all input fields.");
+                    return;
+                    window.location.href = "./createProfile.html";
+                }
+                
 
-            // const form = document.querySelector("#userInformation");
-            // form.addEventListener('click',e => {
-            //     const username = document.querySelector("username");
-            //     const birthday = document.querySelector("birthday");
-            //     const country = document.querySelector("country");
-            //     const occupation = document.querySelector("occupation");
-            //     const email = document.querySelector("email");
-            //     const personality = document.querySelector("personality");
-            //     const userInfo = {
-            //         username:  username.value,
-            //         birthday: birthday.value,
-            //         country: country.value,
-            //         occupation: occupation.value,
-            //         email: email.value,
-            //         personality: personality.value
-            //     }
-            //     localStorage.setItem("userInfo",JSON.stringify(userInfo));
-            // })
+        
+                    // Store the email in local storage as a JSON string.
+                    var user = { email: email};
+                    localStorage.setItem(email, JSON.stringify(user));
+                   
+                       
+                    
+                });
 
+                function passvalues(){
+
+                    var username = document.getElementById("username").value;
+                    var birthday = document.getElementById("birthday").value;
+                    var country = document.getElementById("country").value;
+                    var occupation = document.getElementById("occupation").value;
+                    var email = document.getElementById("email").value;
+                    var personality = document.getElementById("personality").value;
+        
+                    localStorage.setItem("textvalue",username);
+                    localStorage.setItem("textvalue",birthday);
+                    localStorage.setItem("textvalue",country);
+                    localStorage.setItem("textvalue",occupation);
+                    localStorage.setItem("textvalue",email);
+                    localStorage.setItem("textvalue",personality);
+                
+                    window.location.href = "./createProfile1.html";
+                    }
+                    
+                    
+               
         </script>
     </body>
 </html>

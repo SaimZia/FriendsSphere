@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="Swip" href="swip.css" type="text/css">
+        <title>Create Profile</title>
+        <style>
+            div.main{
+                background-color: rgb(221, 250, 254); 
+                width: 100%; 
+                height: 100%;
+                top: 0;
+            }
+            div.header{
+                background-color: rgb(221, 250, 254);
+                height: 90px;
+                width: 100%;
+                top: 0px;
+                text-align: left;
+                position: fixed;
+            }
+            div.footer{
+                background-color: rgb(221, 250, 254);
+                height: 90px;
+                width: 100%;
+                position: fixed;
+                bottom: 0px;
+                text-align: center;
+            }
+            div.middle{
+                margin-top: 100px;
+                text-align: center;
+                justify-content: space-between;
+                margin-bottom: 100px;
+            }
+            div.cards{
+                background-color: white;
+
+                padding-left: 25px;
+                padding-bottom: 10px;
+                width: 50%;
+                height: 250px;
+
+                border: 3px dashed rgb(0, 32, 73);
+
+                border-radius: 30px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                
+                margin-left: 25%;
+                margin-right: 40px;
+                margin-bottom: 40px;
+            }
+            .nextPageButton{
+                background-color: rgb(0, 32, 73);
+                color: white;
+                font-size: 20px;
+
+                margin-top: 10px;
+                border-radius: 40px;
+
+                padding-top: 20px;
+                padding-left: 80px;
+                padding-right: 80px;
+                padding-bottom: 20px;
+            }
+            a:link{
+                text-decoration: none;
+                color: white;
+            }
+            a:visited{
+                color: white;
+            }
+            .intake{
+                border: none;
+                text-transform: unset;
+            }
+            input{
+                border-top-style: hidden;
+                border-left-style: hidden;
+                border-right-style: hidden;
+                border-bottom-style: hidden;
+            }
+            .intake:focus{
+                outline: none;
+            }
+            div.tagbox{
+                background-color: rgb(207, 159, 255);
+                width: fit-content;
+                padding-right: 5px;
+                padding-left: 5px;
+                border-radius: 10px;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body style="background-color: rgb(221, 250, 254); margin: 0;">
+       
+       
+        
+        <div class="BackGroung">
+            <div class="main">
+                <div class="header">
+                    <br>
+                    <table>
+                        <tr>
+                            <th style="padding-left: 10px;"><button style="background: none; border: none;"><a href="createProfile1.html"><i class="material-icons" style="font-size:48px; color: rgb(0, 32, 73);">arrow_back</i></a></button></th>
+                            <th style="padding-left: 10px; color: rgb(0, 32, 73); font-size: 28px;">Add</th>
+                            <th style="padding-left: 10px; color: rgb(0, 32, 73); font-size: 28px;">Your</th>
+                            <th style="padding-left: 10px; color: rgb(0, 32, 73); font-size: 28px;">Photos</th>
+                        </tr>
+                    </table>
+                    
+                </div>
+                <div class="middle">
+                    <p style="color: rgb(0, 0, 0); font-size: 20px;"><b>Add photos to get more friend matches.</b></p>
+                    <div class="cards"><input type="file" id="image" name="file-input" accept="image/*"></div>
+                    <div class="cards"><input type="file" id="image1" name="file-input" accept="image/*"></div>
+                </div>
+
+                <div class="footer">
+                    <button class="nextPageButton" type="submit" id="next"><a href="createProfile3.html">Continue</a></button>
+                </div>
+            </div>
+        </div>
+    
+    
+        <script>
+         
+            function validateFile() {
+                var fileInput = document.getElementById("image");
+                var file = fileInput.files[0];
+                var fileName = file.name;
+                var ext = fileName.substring(fileName.lastIndexOf(".") + 1);
+
+                var fileInput1 = document.getElementById("image1");
+                var file1 = fileInput1.files[0];
+                var fileName1 = file1.name;
+                var ext1 = fileName1.substring(fileName1.lastIndexOf(".") + 1);
+                // You can add more extensions here
+                var allowedExtensions = ["jpg", "jpeg", "png", "gif"];
+                if (!allowedExtensions.includes(ext)) {
+                  alert("Invalid file type");
+                  return false;
+                }
+                return true;
+              }
+        </script>
+    </body>
+</html>
